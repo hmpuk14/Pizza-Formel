@@ -1,0 +1,754 @@
+/*------------------------------------Verwendung von Bootsstrap---------------------------------------------------------------------*/
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+/*------------------------------------app Blade-Haupt-Style--------------------------------------------------------------------------*/
+/* Hintergrundstyle lt. bootstrap cover*/
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+    font-family: "Work Sans";
+    font-size: 22px;
+    color: whitesmoke;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*------------------------------------Authentifizierung---------------------------------------------------------------------------------*/
+/* Style für Registrierung und Login - Vorbild Bootstrap Cover*/
+.auth {
+    padding-top: 250px;
+}
+.my-container {
+    margin-top: 10rem;
+    background-color: #333;
+    font-family: "Work Sans";
+    font-size: 22px;
+    color: whitesmoke;
+    border-radius: 5rem;
+    padding: 1rem;
+}
+.mein-button-stil-secondary {
+    background-color: #333;
+    font-family: "Work Sans";
+    font-size: 22px;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    text-align: center;
+    margin-right: 10px;
+}
+.mein-button-stil-secondary:hover {
+    background-color: whitesmoke;
+    border: 1px solid #333;
+    color: #333;
+    z-index: 999;
+}
+.mein-button-stil-secondary:active {
+    background-color: whitesmoke !important;
+    border: 1px solid #333 !important;
+    color: #333 !important;
+}
+.custom-style {
+    color: #333;
+}
+.custom-style:hover {
+    color: #333;
+    cursor: pointer;
+}
+.mein-button-stil-secondary:active {
+    background-color: whitesmoke;
+    border: 1px solid #333;
+    color: #333;
+    z-index: 999;
+}
+.form-control:focus {
+    outline: none !important;
+    border-color: #333 !important;
+    box-shadow: none !important;
+}
+input[type="checkbox"]:focus {
+    box-shadow: 0 0 5px #333 !important;
+    border-color: #333;
+}
+input[type="checkbox"]:checked {
+    background-color: #333 !important;
+}
+
+/*----------------------Navigation - viele Styles über Bootstrap, hier: Farben, Hintergrund, Größe Anpassung an Cover----------------------------*/
+
+.navbar {
+    position: fixed;
+    background-color: #333;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    z-index: 1000;
+}
+@media (max-width: 991.98px) {
+    header {
+        min-height: 100px;
+    }
+}
+.nav-item dropdown {
+    background-color: #333;
+}
+#nav-logo {
+    width: 150px;
+    height: 150px;
+}
+.navbar-toggler {
+    color: whitesmoke; /* Ändere die Schriftfarbe */
+    border-color: whitesmoke;/* Ändere die Rahmenfarbe */
+}
+.navbar-toggler-icon {
+    background-color: whitesmoke;
+}
+.nav-link.custom-link:hover {
+    text-decoration: underline;
+}
+
+/*-------------------------------------Handy------------------------------------------------------------------------------------------------------*/
+/* Handy Ansicht - Breakpoint Burger Menü und Menü ausklappen links mit Hintergrund */
+@media (max-width: 991.98px) {
+    .navbar {
+        height: 110px;
+    }
+
+    .navbar .container-fluid {
+        height: 100%;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+    }
+
+    .navbar-collapse {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50%;
+    }
+
+    .navbar-collapse.collapsing {
+        transition: none;
+    }
+
+    .navbar-collapse.show {
+        background-color: #333;
+        position: absolute;
+        top: 110px;
+        right: 0;
+        width: 100%;
+        padding: 10px;
+        height: auto;
+        overflow-y: auto;
+        display: block;
+    }
+
+    .navbar-collapse.show .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/*-------------------------------------Welcome und Belegen blade------------------------------------------------------------------------------*/
+/* Style für Video */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+#background-video {
+    width: 100%;
+    height: auto;
+}
+
+/* Hintergrundbild für den Bereich belegen nach Video */
+.section-2 {
+    background-image: url('/images/pizza_final.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Zutaten: Custom button mit Dropdown und Checkbox */
+.mein-button-stil {
+    background-color: #333;
+    font-family: "Work Sans";
+    font-size: 22px;
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+    text-align: center;
+    margin-right: 10px;
+}
+.mein-button-stil:hover {
+    background-color: whitesmoke;
+    color: #333;
+    z-index: 999;
+}
+.mein-button-stil:active {
+    background-color: whitesmoke !important;
+}
+.dropdown-menu {
+    background-color: #333;
+    font-family: "Work Sans";
+    font-size: 15px;
+    color: whitesmoke;
+    width: 210px;
+
+}
+.name {
+    font-family: "Work Sans";
+    font-size: 18px;
+}
+.dropdown-menu {
+    border: none;
+}
+
+.dropdown-menu .form-check-input:checked {
+    background-color: #333;
+    border-color: #333;
+}
+.dropdown-menu .form-check-input:focus {
+    box-shadow: none;
+}
+.price-text {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Positionierung für Überschrift, Formel und Preis Pizza */
+.my-ss-custom-margin {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: #333;
+    border-radius: 4px;
+    font-family: "Work Sans";
+    font-size: 15px;
+    color: whitesmoke;
+    font-size: medium;
+}
+.tooltip-inner {
+    background-color: #333;
+    color: whitesmoke;
+    max-width: 400px;
+    text-align: left;
+}
+
+/* bewegte Zutaten mit Trigger für js */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 45vh;
+    overflow: hidden;
+    margin-top: 5rem;
+}
+
+.topping-img {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    display: none;
+}
+
+.image-display-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    overflow: hidden;
+}
+
+@keyframes softFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); // Leichte, subtile Bewegung
+    }
+}
+.softFloating {
+    animation: softFloat 3s ease-in-out infinite;
+}
+
+#result-formula {
+    text-shadow:
+        0 0 6px rgba(202,228,225,0.92),
+        0 0 30px rgba(202,228,225,0.34),
+        0 0 12px rgba(30,132,242,0.52),
+        0 0 21px rgba(30,132,242,0.92),
+        0 0 34px rgba(30,132,242,0.78),
+        0 0 54px rgba(30,132,242,0.92);
+}
+
+/*-------------------------------------Handy------------------------------------------------*/
+/* Handy-Ansicht Dropdown Menü Abstände Überschrift Berechnungsformel und Hintergrundbild */
+@media (max-width: 996px) {
+    .nav-link custom-link-hide {
+        display: none;
+    }
+    .my-s-custom-margin {
+        margin-top: 3rem;
+    }
+    .btn-group.custom-group {
+        width: 48%;
+        margin-bottom: 10rem;
+    }
+    .section-2 {
+        background-image: none;
+    }
+    .image-display-area {
+        height: 2vh !important;
+    }
+    .image-container {
+        height: 2vh !important;
+        margin-top: 0rem;
+    }
+    .topping-img {
+        display: none !important;
+    }
+}
+@media (min-width: 996px) {
+    .my-s-custom-margin {
+        margin-top: 7em;
+    }
+    .section-2 {
+        background-size: 100% auto;
+        height: 140vh;
+        margin-bottom: -250px;
+        }
+    .footer {
+        margin-top: 0;
+    }
+}
+@media (min-width: 1300px) {
+    .my-s-custom-margin {
+        margin-top: 7rem;
+    }
+    .btn-group.custom-group {
+        width: 200px;
+    }
+    .section-2 {
+        background-size: 100% auto;
+        height: 125vh;
+        margin-bottom: -50px;
+    }
+    .dropdown-menu {
+        font-family: "Work Sans";
+        font-size: 18px;
+    }
+    .footer {
+        margin-top: 0;
+    }
+}
+
+/*-------------------------------------Pizza BLade----------------------------------------------------------------------------------------*/
+/* Berechnung Anzahl und Preis Pizzen */
+
+.quantity-input {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #333;
+    font-family: "Work Sans";
+    font-size: 22px;
+    color: whitesmoke;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+/* Der Browser soll keine Pfeile zeigen. Damit +- Tasten verwendet werden*/
+/* Für Webkit-Browser wie Chrome und Safari */
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Für Firefox */
+.quantity-input {
+    -moz-appearance: textfield;
+}
+
+.increase-button {
+    margin: 4px;
+    display: inline-block;
+    $size: 40px;
+    box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 -2px 1px 0 rgba(0,0,0,0.25);
+    border-radius: 8px;
+    background: whitesmoke;
+    position: relative;
+    height: $size;
+    width: $size;
+    text-shadow: -1px 0 #333, 0 1px #333, 1px 0 #333, 0 -1px #333;
+}
+.mein-s-prim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mein-s-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mein-s-ter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Gesamtpreis unter Preis */
+.custom-offset {
+    margin-left: calc(62.9%);
+}
+/* Freitextfeld für Sonderwünsche */
+.mein-text {
+    .row {
+        justify-content: center;
+        align-items: center;
+        min-height: 7rem; /* Passen Sie die Höhe nach Bedarf an */
+    }
+}
+.meine-textzeile {
+    justify-content: center;
+    align-items: center;
+    min-height: 7rem;
+}
+
+#sonderwunsch {
+    margin-top: 2rem;
+    font-family: "Work Sans";
+    font-size: 22px;
+    color: #ccc;
+}
+
+#sonderwunsch::placeholder {
+    color: #ccc;
+}
+
+#sonderwunsch:not(:placeholder-shown) {
+    color: #000;
+}
+/*-------------------------------------Handy----------------------------*/
+/* Handy-Ansicht Preis und Löschen Button */
+
+@media (max-width: 995px) {
+    .mein-s-sec {
+        margin-bottom: 1rem;
+    }
+    .mein-s-ter {
+        margin-bottom: 3rem;
+    }
+    .custom-offset {
+        margin-left: calc(0%);
+    }
+    .my-container {
+        margin-top: 1rem;
+    }
+}
+/*-------------------------------------Zustellung blade-------------------------------------------------------------------------------------------*/
+.container-fluid.no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.video-zustellung {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Für ein 16:9-Verhältnis */
+    overflow: hidden;
+}
+#meinstyle-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mein-button-stil-transp {
+    position: absolute;
+    margin-top: 0;
+    top: 42%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    font-size: 22px;
+    color: whitesmoke;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mein-button-stil-transp:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #333;
+}
+.mein-button-stil-transp:active {
+    background-color: whitesmoke !important;
+    color: #333 !important;
+}
+/*-------------------------------------Handy Ansicht Video--------------------------------------------*/
+@media (max-width: 650px) {
+    #meinstyle-video {
+        margin-top: -35px;
+    }
+    .mein-button-stil-transp {
+        position: absolute;
+        margin-top: 0;
+        top: 20%;
+        left: 48%;
+    }
+}
+@media (min-width: 651px) {
+    #meinstyle-video {
+        margin-top: -38px;
+    }
+    .mein-button-stil-transp {
+        position: absolute;
+        margin-top: 0px;
+        top: 25%;
+        left: 48%;
+    }
+}
+@media (min-width: 820px) {
+    .mein-button-stil-transp {
+        position: absolute;
+        margin-top: 0;
+        top: 28%;
+        left: 48%;
+    }
+}
+@media (min-width: 1300px) {
+    #meinstyle-video {
+        margin-top: 5px;
+    }
+    .mein-button-stil-transp {
+        position: absolute;
+        margin-top: 0;
+        top: 38%;
+        left: 48%;
+    }
+}
+/*-------------------------------------Bestellung Blade-------------------------------------------------------------------------------------*/
+.ueberschrift {
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+.month-input {
+    background-color: whitesmoke;
+    font-family: "Work Sans";
+    font-size: 22px;
+    color: #333;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.latest-order {
+    border-radius: 5px;
+    display: inline-block;
+}
+.error {
+    margin-top: 50px;
+}
+#eins {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#zwei {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+/*-------------------------------------Handy Ansicht Bestellung--------------------------------------------*/
+@media (max-width: 850px) {
+    #eins, #zwei {
+        justify-content: center;
+    }
+}
+/*-------------------------------------Admin blade---------------------------------------------------------------------------------------------*/
+
+/* Breite Suchfeld und Abstand, Schrift mittig Buttons */
+.my-style {
+    width: 33%;
+    margin-bottom: 2rem;
+}
+.my-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-label {
+    margin-right: 1rem;
+}
+
+/* selbst gestyltes dropdown Menü */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    background-color: #333;
+    color: #333;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.selected-option {
+    padding: 5px 10px;
+    border: 1px solid #333;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: 1px solid #333;
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+
+.option {
+    padding: 5px 10px;
+}
+
+.option:hover,
+.option:active,
+.option:focus {
+    background-color: #333;
+    color: whitesmoke;
+}
+
+.custom-dropdown:hover .options {
+    display: block;
+}
+
+/*-------------------------------------Lagerstand blade---------------------------------------------------------------------------------------------*/
+.inventory-dropdown {
+    position: relative;
+}
+
+.inventory-dropdown::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 14px;
+    color: #333;
+}
+
+.inventory-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: whitesmoke;
+    padding-right: 30px;
+    border: 1px solid #ccc;
+    outline-color: #333;
+}
+
+.form-control::-ms-expand {
+    display: none;
+}
+.custom-input {
+    font-size: 18px;
+    margin-bottom: 2mm;
+    text-align: center;
+}
+/* Keine Pfeile bei Input */
+/* Für Chrome, Safari und Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Für Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* sweetalert2 Buttons */
+/* Grundstil für beide Buttons */
+.swal2-styled {
+    background-color: #333 !important;
+    border: 1px solid #333 !important;
+    color: whitesmoke !important;
+}
+
+/* Stil für den Hover-Zustand beider Buttons */
+.swal2-styled:hover {
+    background-color: transparent !important;
+    color: #333 !important;
+}
+
+/* Stil für den Fokus-Zustand beider Buttons, um den violetten Fokus-Rand zu entfernen */
+.swal2-styled:focus {
+    box-shadow: 0 0 0 0.2rem rgba(51, 51, 51, 0.5) !important;
+}
+
+/*-------------------------------------Handy Ansicht Lagerstand--------------------------------------------*/
+@media (max-width: 767px) {
+    input[placeholder="Neue Menge"],
+    input[placeholder="Neuer Preis"] {
+        max-width: 120px;
+        display: block;
+        margin: 0 auto;
+    }
+    .dhandy {
+        margin-top: 3px;
+    }
+    #dishandy {
+        margin-top: 3px;
+    }
+}
+@media (max-width: 1023px) {
+   input[placeholder="Neue Menge"] {
+        min-width: 115px;
+   }
+  input[placeholder="Neuer Preis"] {
+        min-width: 110px;
+  }
+}
+/*-------------------------------------Footer----------------------------------------------------------------------------------------------------------------------------*/
+    .footer {
+        margin-top: 50px;
+    }
+    .footer-content {
+        padding: 5px 10px;
+    }
+
